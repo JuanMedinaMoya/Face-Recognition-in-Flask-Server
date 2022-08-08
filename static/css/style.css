@@ -1,0 +1,94 @@
+body{
+    background-color: rgba(255, 0, 238, 0.194);
+    
+}
+nav{
+    background-color:rgba(92, 0, 74, 0.542);
+}
+
+.box{
+    max-width: 800px;
+    margin: 50px auto;
+    position:relative;
+    box-shadow: 0 10px 30px 0 rgba(104, 52, 52, 0.3);
+    padding: 30px;
+    background-color: #fff;
+    background-image: transparent;
+
+}
+.box .img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+
+    align-content: center;
+    text-align: center;
+
+}   
+
+
+.box .title{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    padding-bottom: 20px;
+    color:#321bc9;
+    background: linear-gradient(to right, #ff0800 0%,#321bc9 100% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.insert-form .form-field{
+    position:relative;
+    margin:32px;
+
+}
+.insert-form .input-text{
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: rgb(25, 0, 69);
+    font-size:18px;
+    line-height:26px;
+    font-weight: 400;
+    margin-bottom: 50px;
+
+}
+.insert-form .input-text:focus + .label,
+.insert-form .input-text.not-empty + .label,
+.insert-form .input-text:not(:placeholder-shown) + .label {
+    transform:translateY(-24px);
+}
+.insert-form .input-text:focus{
+    outline: none;
+}
+
+
+.insert-form .label{
+    position:absolute;
+    left:20px;
+    bottom: 11px;
+    font-size:18px;
+    line-height:26px;
+    color:rgb(50, 0, 42);
+    cursor:text;
+    text-transform: capitalize;
+    transition: transform 0.2s ease-in-out;
+}
+
+.insert-form .submit-btn{
+    display:inline-block;
+    background-image: linear-gradient(125deg,#a72879 ,#000);
+    color: #fff;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+    font-size:16px;
+    padding: 8px 16px;
+    border: none;
+    width: 100px;
+    cursor:pointer;
+}
+

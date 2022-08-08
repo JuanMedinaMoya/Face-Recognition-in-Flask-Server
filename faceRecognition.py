@@ -1,4 +1,5 @@
 import cv2
+from cv2 import resize
 import numpy as np
 import magic
 
@@ -33,18 +34,19 @@ def faceClassifier(image):
         video = cv2.VideoCapture('video.mp4')
         while True:
             ret, frame = video.read()
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            resized_frame = resizing_img(frame)
+            gray = cv2.cvtColor(resized_frame, cv2.COLOR_BGR2GRAY)
             gray = (gray * 255).astype(np.uint8)
 
-            faces = faceClassif.detectMultiScale(gray,
-                scaleFactor = 1.1,   #tamaño de la imagen, hace una piramide de imagenes (con valores pequeños, aumentan falsos positivos)
+            faces = faceClassif.detectMultiScale(resized_frame,
+                scaleFactor = 1.2,   #tamaño de la imagen, hace una piramide de imagenes (con valores pequeños, aumentan falsos positivos)
                 minNeighbors=5,     #cuantos vecinos tienen los rectangulos candidatos para retener
-                minSize=(100,100),     #tamaño minimo del rostro
+                minSize=(30,30),     #tamaño minimo del rostro
                 maxSize=(400,400)    #tamaño maximo del rostro
             )
             for(x,y,w,h) in faces:
-                cv2.rectangle(frame,(x,y), (x+w,y+h),(0,255,0),2)
-            cv2.imshow('frame',frame)
+                cv2.rectangle(resized_frame,(x,y), (x+w,y+h),(0,255,0),2)
+            cv2.imshow('frame',resized_frame)
 
             k = cv2.waitKey(30) & 0xFF   #press ESC to exit 
             if k ==27:

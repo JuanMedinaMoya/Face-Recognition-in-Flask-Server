@@ -4,7 +4,6 @@ from flask import Flask, redirect, render_template, request
 import faceRecognition as fc
 
 import os
-
 import magic
 
 
